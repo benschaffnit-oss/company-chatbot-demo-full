@@ -5,8 +5,8 @@ services:
     repo: https://github.com/benschaffnit-oss/company-chatbot-demo-full
     branch: main
     dockerfilePath: frontend/Dockerfile
-    healthCheckPath: /
     port: 8501
+    healthCheckPath: /
     plan: free
 
   - type: web
@@ -15,14 +15,12 @@ services:
     repo: https://github.com/benschaffnit-oss/company-chatbot-demo-full
     branch: main
     dockerfilePath: backend/Dockerfile
-    healthCheckPath: /health
     port: 8000
+    healthCheckPath: /
     plan: free
 
   - type: worker
     name: qdrant
     env: docker
-    repo: https://github.com/benschaffnit-oss/company-chatbot-demo-full
-    branch: main
-    dockerfilePath: qdrant/Dockerfile  # ← if you have one; otherwise use image: qdrant/qdrant:latest
+    image: qdrant/qdrant:latest  # Use official image instead of Dockerfile if you don't have one
     plan: free
