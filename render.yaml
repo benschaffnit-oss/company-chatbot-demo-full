@@ -22,5 +22,5 @@ services:
   - type: worker
     name: qdrant
     env: docker
-    image: qdrant/qdrant:latest  # Use official image instead of Dockerfile if you don't have one
+    image: qdrant/qdrant:latest
     plan: free
