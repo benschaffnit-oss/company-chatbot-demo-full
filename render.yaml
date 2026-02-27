@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: frontend
+    env: docker
+    repo: https://github.com/benschaffnit-oss/company-chatbot-demo-full
+    branch: main
+    dockerfilePath: frontend/Dockerfile
+    healthCheckPath: /
+    port: 8501
+    plan: free
+
+  - type: web
+    name: backend
+    env: docker
+    repo: https://github.com/benschaffnit-oss/company-chatbot-demo-full
+    branch: main
+    dockerfilePath: backend/Dockerfile
+    healthCheckPath: /health
+    port: 8000
+    plan: free
+
+  - type: worker
+    name: qdrant
+    env: docker
+    repo: https://github.com/benschaffnit-oss/company-chatbot-demo-full
+    branch: main
+    dockerfilePath: qdrant/Dockerfile  # ← if you have one; otherwise use image: qdrant/qdrant:latest
+    plan: free
