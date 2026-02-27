@@ -1,0 +1,20 @@
+# Ignore environment files with secrets
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore editor/IDE files
+.vscode/
+.idea/
+.DS_Store
+
+# Ignore Docker junk
+*.log
